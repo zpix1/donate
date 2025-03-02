@@ -7,6 +7,22 @@ interface DonationMethod {
   description?: string;
 }
 
+// Define the gtag function type to avoid TypeScript errors
+declare global {
+  interface Window {
+    gtag: (
+      command: string,
+      action: string,
+      params?: {
+        event_category?: string;
+        event_label?: string;
+        value?: number;
+        [key: string]: string | number | boolean | undefined;
+      }
+    ) => void;
+  }
+}
+
 const DonationMethods = () => {
   const [copiedAddress, setCopiedAddress] = useState<string | null>(null);
 
@@ -37,9 +53,23 @@ const DonationMethods = () => {
     },
   ];
 
-  const copyToClipboard = (address: string) => {
+  // Track event with Google Analytics
+  const trackEvent = (methodName: string) => {
+    if (typeof window !== "undefined" && window.gtag) {
+      window.gtag("event", "copy_address", {
+        event_category: "Donation",
+        event_label: methodName,
+      });
+    }
+  };
+
+  const copyToClipboard = (address: string, methodName: string) => {
     navigator.clipboard.writeText(address);
     setCopiedAddress(address);
+
+    // Track the copy event
+    trackEvent(methodName);
+
     setTimeout(() => setCopiedAddress(null), 2000);
   };
 
@@ -68,9 +98,12 @@ const DonationMethods = () => {
                 {method.address}
               </code>
               <button
-                onClick={() => copyToClipboard(method.address)}
+                onClick={() => copyToClipboard(method.address, method.name)}
                 className="ml-2 bg-blue-500 text-white p-2 rounded hover:bg-blue-600"
                 title="Copy to clipboard"
+                data-ga-event="copy_address"
+                data-ga-category="Donation"
+                data-ga-label={method.name}
               >
                 {copiedAddress === method.address ? "✓" : "Copy"}
               </button>
