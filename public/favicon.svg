@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <!-- Background -->
+  <rect width="64" height="64" fill="#4169E1" rx="8" ry="8" />
+  
+  <!-- Heart -->
+  <path d="M32 48 L16 32 Q8 24 16 16 Q24 8 32 16 Q40 8 48 16 Q56 24 48 32 Z" fill="#FFFFFF" />
+</svg> 
