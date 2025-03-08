@@ -1,4 +1,5 @@
 import { useState } from "react";
+import QRCode from "react-qr-code";
 
 interface DonationMethod {
   name: string;
@@ -74,32 +75,47 @@ const DonationMethods = () => {
   };
 
   return (
-    <div className="mt-8 max-w-4xl mx-auto px-4">
+    <div className="mt-8 max-w-5xl mx-auto px-4">
       <h2 className="text-2xl font-bold mb-4">Support My Work</h2>
-      <p className="mb-4 text-gray-600">
+      <p className="mb-6 text-gray-600">
         Your donations help me continue developing and maintaining open source
         software. Choose your preferred method below:
       </p>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {donationMethods.map((method) => (
           <div
             key={method.name}
-            className="border rounded-lg p-4 bg-white shadow-md"
+            className="border rounded-lg p-5 bg-white shadow-md flex flex-col h-full"
           >
-            <div className="flex items-center mb-2">
-              <span className="text-2xl mr-2">{method.icon}</span>
-              <h3 className="text-xl font-semibold">{method.name}</h3>
+            <div className="flex items-center mb-3">
+              <div className="bg-gray-100 w-10 h-10 flex items-center justify-center rounded-full mr-3">
+                <span className="text-xl">{method.icon}</span>
+              </div>
+              <h3 className="text-lg font-semibold">{method.name}</h3>
             </div>
+
             {method.description && (
-              <p className="text-sm text-gray-600 mb-2">{method.description}</p>
+              <p className="text-sm text-gray-600 mb-3">{method.description}</p>
             )}
-            <div className="flex items-center mt-2">
-              <code className="bg-gray-100 p-2 rounded flex-1 overflow-x-auto text-xs">
+
+            <div className="flex justify-center mb-4 mt-1 flex-grow">
+              <div className="p-2 bg-white border rounded-lg">
+                <QRCode
+                  value={method.address}
+                  size={120}
+                  level="H"
+                  className="mx-auto"
+                />
+              </div>
+            </div>
+
+            <div className="flex items-center bg-gray-50 p-2 rounded-lg">
+              <code className="flex-1 overflow-x-auto text-xs break-all">
                 {method.address}
               </code>
               <button
                 onClick={() => copyToClipboard(method.address, method.name)}
-                className="ml-2 bg-blue-500 text-white p-2 rounded hover:bg-blue-600"
+                className="ml-2 bg-blue-500 text-white px-3 py-1 rounded-md hover:bg-blue-600 flex-shrink-0"
                 title="Copy to clipboard"
                 data-ga-event="copy_address"
                 data-ga-category="Donation"
