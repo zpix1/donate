@@ -106,7 +106,7 @@ const DonationMethods = () => {
             </div>
             <div className="w-12 h-12 flex items-center justify-center">
               <img
-                src="public/DA_Alert_Color.png"
+                src="DA_Alert_Color.png"
                 alt="DonationAlerts"
                 width={48}
                 height={48}

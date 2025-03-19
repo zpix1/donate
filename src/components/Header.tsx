@@ -3,7 +3,7 @@ const Header = () => {
     <header className="pt-4 w-full flex justify-center items-center relative">
       <div
         className="w-full max-w-5xl h-48 bg-cover bg-center rounded-lg overflow-hidden"
-        style={{ backgroundImage: "url('public/header.png')" }}
+        style={{ backgroundImage: "url('header.png')" }}
         title="Background image created using https://github.com/zpix1/polyomino"
       >
         <div className="w-full h-full flex items-center justify-center bg-opacity-40">
