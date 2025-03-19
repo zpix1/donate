@@ -8,7 +8,7 @@ function App() {
     <div className="flex flex-col min-h-screen bg-gray-100">
       <Header />
       <main className="flex-grow w-full">
-        <div className="max-w-7xl mx-auto px-4 py-8">
+        <div className="max-w-7xl mx-auto px-4">
           <DonationMethods />
 
           <div className="border-t border-gray-200 my-8"></div>
