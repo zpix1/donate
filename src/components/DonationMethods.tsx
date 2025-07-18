@@ -30,15 +30,7 @@ const DonationMethods = () => {
   const [copiedAddress, setCopiedAddress] = useState<string | null>(null);
   const [showCryptoMethods, setShowCryptoMethods] = useState(false);
 
-  const donationMethods: DonationMethod[] = [
-    {
-      name: "DonationAlerts",
-      address: "https://www.donationalerts.com/r/zpix1",
-      icon: "💳",
-      description: "Worldwide / Russian card donations",
-      isLink: true,
-      link: "https://www.donationalerts.com/r/zpix1",
-    },
+  const cryptoMethods: DonationMethod[] = [
     {
       name: "Bitcoin (BTC) - Native SegWit",
       address: "bc1q4ea0ayfk9l2dzf8p0lwu8cuxsdank7lz83p7jr",
@@ -100,9 +92,7 @@ const DonationMethods = () => {
           <div className="flex items-center justify-between mb-3">
             <div>
               <h3 className="text-lg font-semibold">DonationAlerts</h3>
-              <p className="text-sm text-gray-600 mt-1">
-                Worldwide / Russian card donations
-              </p>
+              <p className="text-sm text-gray-600 mt-1">Card donations</p>
             </div>
             <div className="w-12 h-12 flex items-center justify-center">
               <img
@@ -139,7 +129,7 @@ const DonationMethods = () => {
       {showCryptoMethods && (
         <>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {donationMethods.slice(1).map((method) => (
+            {cryptoMethods.map((method) => (
               <div
                 key={method.name}
                 className="border rounded-lg p-5 bg-white shadow-md flex flex-col h-full"
