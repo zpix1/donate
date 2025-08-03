@@ -9,7 +9,7 @@ const Header = () => {
         <div className="w-full h-full flex items-center justify-center bg-opacity-40">
           <div className="bg-black bg-opacity-70 p-4 rounded">
             <h1 className="text-4xl font-bold text-white text-center">
-              Ivan Baksheev's Support Page
+              Zpix1's Support Page
             </h1>
           </div>
         </div>

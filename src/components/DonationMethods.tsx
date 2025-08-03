@@ -83,7 +83,7 @@ const DonationMethods = () => {
       <h2 className="text-2xl font-bold mb-4">Support My Work</h2>
       <p className="mb-6 text-gray-600">
         Your donations help me continue developing and maintaining open source
-        software. Choose your preferred method below:
+        software.
       </p>
 
       {/* DonationAlerts Card */}

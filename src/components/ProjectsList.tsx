@@ -13,11 +13,11 @@ const ProjectsList = () => {
   const projects: Project[] = [
     {
       id: 1,
-      name: "yt-anti-translate",
+      name: "YouTube Anti Translate",
       description:
         "Chrome extension to disable YouTube video titles autotranslation",
       url: "https://github.com/zpix1/yt-anti-translate",
-      stars: 86,
+      stars: 202,
       language: "JavaScript",
       chromeStoreUrl:
         "https://chromewebstore.google.com/detail/youtube-anti-translate/ndpmhjnlfkgfalaieeneneenijondgag",
