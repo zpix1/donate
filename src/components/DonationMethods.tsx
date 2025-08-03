@@ -28,7 +28,7 @@ declare global {
 
 const DonationMethods = () => {
   const [copiedAddress, setCopiedAddress] = useState<string | null>(null);
-  const [showCryptoMethods, setShowCryptoMethods] = useState(false);
+  const [showCryptoMethods, setShowCryptoMethods] = useState(true);
 
   const cryptoMethods: DonationMethod[] = [
     {
@@ -87,7 +87,7 @@ const DonationMethods = () => {
       </p>
 
       {/* DonationAlerts Card */}
-      <div className="mb-6">
+      {/* <div className="mb-6">
         <div className="border rounded-lg p-5 bg-white shadow-md">
           <div className="flex items-center justify-between mb-3">
             <div>
@@ -114,7 +114,7 @@ const DonationMethods = () => {
             Donate via DonationAlerts
           </a>
         </div>
-      </div>
+      </div> */}
 
       {/* Crypto Methods Section */}
       <div className="mb-4">
