@@ -67,10 +67,6 @@ const DonationMethods = () => {
     }
   };
 
-  const handleDonationAlertsClick = () => {
-    trackEvent("DonationAlerts", "click_donation_link");
-  };
-
   const copyToClipboard = (address: string, methodName: string) => {
     navigator.clipboard.writeText(address);
     setCopiedAddress(address);
