@@ -89,8 +89,27 @@ const DonationMethods = () => {
             <div>
               <h3 className="text-lg font-semibold">Patreon</h3>
               <p className="text-sm text-gray-600 mt-1">
-                Monthly support (5$) or a single time donation (3$)
+                Monthly support or a single time donation
               </p>
+            </div>
+            <div className="w-12 h-12 flex items-center justify-center">
+              <svg
+                width="32"
+                height="32"
+                viewBox="0 0 64 64"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <rect
+                  x="6"
+                  y="6"
+                  width="16"
+                  height="52"
+                  rx="8"
+                  fill="#FF424D"
+                />
+                <circle cx="44" cy="24" r="18" fill="#FF424D" />
+              </svg>
             </div>
           </div>
           <a
