@@ -75,7 +75,7 @@ function HireMe() {
             <div className="mb-4">
               <h4 className="font-medium text-gray-800 mb-2">Contact</h4>
               <ul className="space-y-1 text-gray-600">
-                <li>📍 Novosibirsk, Russia (UTC+7)</li>
+                {/* <li>📍 Novosibirsk, Russia (UTC+7)</li> */}
                 <li>
                   <a
                     href="https://t.me/zpix1"

@@ -28,7 +28,7 @@ declare global {
 
 const DonationMethods = () => {
   const [copiedAddress, setCopiedAddress] = useState<string | null>(null);
-  const [showCryptoMethods, setShowCryptoMethods] = useState(true);
+  const [showCryptoMethods, setShowCryptoMethods] = useState(false);
 
   const cryptoMethods: DonationMethod[] = [
     {
@@ -81,6 +81,29 @@ const DonationMethods = () => {
         Your donations help me continue developing and maintaining open source
         software.
       </p>
+
+      {/* Patreon Card */}
+      <div className="mb-6">
+        <div className="border rounded-lg p-5 bg-white shadow-md">
+          <div className="flex items-center justify-between mb-3">
+            <div>
+              <h3 className="text-lg font-semibold">Patreon</h3>
+              <p className="text-sm text-gray-600 mt-1">
+                Monthly support (5$) or a single time donation (3$)
+              </p>
+            </div>
+          </div>
+          <a
+            href="https://www.patreon.com/c/zpix1"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => trackEvent("Patreon", "click_link")}
+            className="inline-block bg-orange-600 text-white px-4 py-2 rounded-md hover:bg-orange-700 w-full text-center"
+          >
+            Donate on Patreon
+          </a>
+        </div>
+      </div>
 
       {/* DonationAlerts Card */}
       {/* <div className="mb-6">
